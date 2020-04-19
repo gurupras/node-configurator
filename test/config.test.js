@@ -165,7 +165,8 @@ describe('Config', () => {
     })
 
     describe('$set', () => {
-      test('Setting an existing property (object) unsubscribes it', async () => {
+      // FIXME: This test is being skipped due to a bug in on-change (https://github.com/sindresorhus/on-change/issues/58)
+      test.skip('Setting an existing property (object) unsubscribes it', async () => {
         const oldObj = cfg.server.dev
         const promise = testForEvent(cfg.server, 'change')
         expect(() => Config.$set(cfg.server, 'dev', 'dummy')).not.toThrow()
