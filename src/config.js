@@ -54,7 +54,7 @@ function $set (obj, k, v) {
 class ConfigObject {
   constructor (config) {
     if (typeof config !== 'object') {
-      throw new Error('Invalid config type. Expecting object.')
+      throw new Error(`Invalid config type. Expecting object; got '${typeof config}'`)
     }
 
     bindEmittery(this)
