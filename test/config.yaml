@@ -1,0 +1,16 @@
+type: test
+server:
+  dev:
+    host: dev-host
+    port: 30
+  prod:
+    host: prod-host
+    port: 40
+plugins:
+- name: analytics
+  path: plugins/analytics
+- name: opengraph
+  path: plugins/opengraph
+backend:
+  mongo:
+    url: mongodb://localhost
