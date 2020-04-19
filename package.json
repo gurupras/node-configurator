@@ -1,5 +1,5 @@
 {
-  "name": "configurator",
+  "name": "@gurupras/configurator",
   "version": "0.0.1",
   "description": "Easy app configuration with dynamic modification support",
   "main": "index.js",
@@ -14,9 +14,9 @@
   "author": "Guru Prasad Srinivasa",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gurupras/configurator/issues"
+    "url": "https://github.com/gurupras/node-configurator/issues"
   },
-  "homepage": "https://github.com/gurupras/configurator#readme",
+  "homepage": "https://github.com/gurupras/node-configurator#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
