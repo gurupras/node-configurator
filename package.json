@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gurupras/configurator.git"
+    "url": "git+https://github.com/gurupras/node-configurator.git"
   },
   "author": "Guru Prasad Srinivasa",
   "license": "MIT",
