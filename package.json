@@ -1,6 +1,6 @@
 {
   "name": "@gurupras/configurator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Easy app configuration with dynamic modification support",
   "main": "index.js",
   "scripts": {
