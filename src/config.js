@@ -103,6 +103,7 @@ class Config {
   }
 }
 
-export default Config
-
-export { ConfigObject }
+module.exports = {
+  Config,
+  ConfigObject
+}

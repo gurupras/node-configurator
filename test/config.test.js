@@ -1,5 +1,5 @@
 import path from 'path'
-import Config, { ConfigObject } from '../src/config'
+import { Config, ConfigObject } from '../src/config'
 
 function testForEvent (obj, event, timeout = 1000) {
   return new Promise((resolve, reject) => {
