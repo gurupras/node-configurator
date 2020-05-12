@@ -1,15 +1,7 @@
 import path from 'path'
-import { Config, ConfigObject } from '../src/config'
+import { testForEvent } from '@gurupras/test-helpers'
 
-function testForEvent (obj, event, timeout = 1000) {
-  return new Promise((resolve, reject) => {
-    const timer = setTimeout(reject, timeout)
-    obj.$on(event, (...args) => {
-      clearTimeout(timer)
-      return resolve(...args)
-    })
-  })
-}
+import { Config, ConfigObject } from '../src/config'
 
 const badTypes = [
   null,

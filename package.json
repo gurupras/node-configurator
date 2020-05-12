@@ -20,6 +20,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "@gurupras/test-helpers": "^0.2.1",
     "@types/jest": "^25.2.1",
     "babel-jest": "^25.3.0",
     "eslint": "^6.8.0",
