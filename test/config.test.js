@@ -1,7 +1,11 @@
 import path from 'path'
-import { testForEvent } from '@gurupras/test-helpers'
+import { testForEvent as _testForEvent } from '@gurupras/test-helpers'
 
 import { Config, ConfigObject } from '../src/config'
+
+function testForEvent (obj, event) {
+  return _testForEvent(obj, event, { timeout: 30000, on: '$on', off: '$off' })
+}
 
 const badTypes = [
   null,
