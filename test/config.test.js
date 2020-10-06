@@ -8,13 +8,13 @@ function testForEvent (obj, event) {
 }
 
 const badTypes = [
-  null,
-  undefined,
-  'test',
-  '',
-  1,
-  Number.NaN,
-  Number.POSITIVE_INFINITY
+  ['null', null],
+  ['undefined', undefined],
+  ['string', 'test'],
+  ['empty string', ''],
+  ['number', 1],
+  ['Number.NaN', Number.NaN],
+  ['Number.POSITIVE_INFINITY', Number.POSITIVE_INFINITY]
 ]
 
 let config
@@ -50,10 +50,8 @@ beforeEach(async () => {
 })
 
 describe('ConfigObject', () => {
-  test('Throws on Constructing with non-object', async () => {
-    for (const t of badTypes) {
-      expect(() => new ConfigObject(t)).toThrow()
-    }
+  test.each(badTypes)('Throws on Constructing with non-object (%s)', async (_, type) => {
+    expect(() => new ConfigObject(type)).toThrow()
   })
 })
 
@@ -68,10 +66,8 @@ describe('Config', () => {
       expect(() => new Config(cfg)).not.toThrow()
       expect(new Config(cfg)).toEqual(cfg)
     })
-    test('Throws error on non-object', async () => {
-      for (const t of badTypes) {
-        expect(() => new Config(t)).toThrow()
-      }
+    test.each(badTypes)('Throws error on non-object (%s)', async (_, type) => {
+      expect(() => new Config(type)).toThrow()
     })
 
     test('Returns an equivalent object', async () => {
