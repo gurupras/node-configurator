@@ -53,7 +53,7 @@ function $set (obj, k, v) {
 
 class ConfigObject {
   constructor (config) {
-    if (typeof config !== 'object') {
+    if (config === null || config === undefined || typeof config !== 'object') {
       throw new Error(`Invalid config type. Expecting object; got '${typeof config}'`)
     }
 
@@ -79,7 +79,7 @@ function processConfigEntry (entry) {
       ret.push(processConfigEntry(e))
     }
     return ret
-  } else if (typeof entry === 'object') {
+  } else if (entry !== null && entry !== undefined && typeof entry === 'object') {
     return new ConfigObject(entry)
   } else {
     return entry
@@ -92,7 +92,7 @@ class Config {
       // This is expected to be a YAML file path
       config = yaml.safeLoad(fs.readFileSync(config, 'utf-8'))
     }
-    if (typeof config !== 'object') {
+    if (config === null || config === undefined || typeof config !== 'object') {
       throw new Error('Invalid config type. Expecting object.')
     }
     return processConfigEntry(config)
